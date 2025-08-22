@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./login_style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form-box">
+            <h2>Đăng ký</h2>
+            <form id="registerForm" autocomplete="off">
+                <div class="input-group">
+                    <label for="fullname"> Họ và tên</label>
+                    <input type="text" id="fullname" required />
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" required />
+                </div>
+                <div class="input-group password-group">
+                    <label for="password">Mật khẩu</label>
+                    <input type="text" id="password" required />
+                    <span class="toggle-password" data-target="password">👁</span>
+                </div>
+                <div class="input-group password-group">
+                    <label for="confirmPassword">Mật khẩu</label>
+                    <input type="text" id="password" required />
+                    <span class="toggle-password" data-target="confirmPassword">👁</span>
+                </div>
+                <button type="sumbit"> Add Account</button>
+                <p id="statusMsg"></p>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="./login_script.js"></script>
+</body>
+
+</html> 

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeLiving - Modern Furniture Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>LuxeLiving</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="signin.html">Sign in</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Elevate Your Space</h2>
+            <p>Discover modern furniture that blends comfort with style</p>
+            <button class="btn-primary">Shop Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://placehold.co/1600x900" alt="Modern living room with contemporary furniture set featuring a cream sofa, wooden coffee table, and large rug in neutral tones" />
+        </div>
+    </section>
+
+    <section class="featured-products" id="products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-container" id="products-grid">
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="benefit-card">
+            <i class="fas fa-truck"></i>
+            <h3>Free Shipping</h3>
+            <p>On orders over $99</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-undo"></i>
+            <h3>30-Day Returns</h3>
+            <p>No questions asked</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>5-Year Warranty</h3>
+            <p>Premium quality guarantee</p>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>Founded in 2010, LuxeLiving has been transforming homes with carefully curated furniture pieces that combine functionality with aesthetic appeal. Our mission is to make high-quality, design-forward furniture accessible to everyone.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://placehold.co/800x600" alt="Modern furniture showroom with furniture arranged neatly in natural lighting" />
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>LuxeLiving</h3>
+                <p>Crafting spaces you'll love coming home to.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="signin.html">Sign in</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>123 Design Street</p>
+                <p>Furniture City, FC 12345</p>
+                <p>info@luxeliving.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 LuxeLiving. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-product-image">
+                <img id="modal-image" src="" alt="Expanded view of selected furniture product" />
+            </div>
+            <div class="modal-product-info">
+                <h3 id="modal-title"></h3>
+                <p id="modal-price"></p>
+                <p id="modal-description"></p>
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" value="1" min="1" id="quantity">
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <button class="btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="firebase.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
